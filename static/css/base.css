@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+html {
+    height: 100%;
+}
+
+/*---------------Header---------------*/
+
+#topnav {
+    background-color: #855e42;
+}
+
+.logo-font {
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    font-size: 3rem;
+}
+
+#searchBar {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#searchBtn {
+    background-color: white;
+    border-left: 0px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.white,
+i {
+    color: white;
+}
+
+/*---------------NavBar---------------*/
+.navbar {
+    background-color: #855e42;
+}

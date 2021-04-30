@@ -1,0 +1,3 @@
+[] Include Shop at navbar
+[] Media queries for smaller screens
+[]
