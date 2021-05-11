@@ -66,6 +66,15 @@ html {
     padding: 8px;
 }
 
+.dropdown-menu {
+    color: white;
+    background-color: #855e42;
+}
+
+.dropdown-item {
+    color: white;
+}
+
 /* Bellow effect was sourced from https://ianlunn.github.io/Hover/ */
 
 .hvr-underline-from-left {
