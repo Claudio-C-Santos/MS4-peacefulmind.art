@@ -36,6 +36,11 @@ html {
     box-shadow: 0px 1px 0px #df9b6a;
 }
 
+.mobileIcon {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
 /*---------------NavBar---------------*/
 .navbar {
     color: white;
@@ -57,6 +62,9 @@ html {
   color: #f7bf98;
 }
 
+.navbar {
+    padding: 8px;
+}
 
 /* Bellow effect was sourced from https://ianlunn.github.io/Hover/ */
 
