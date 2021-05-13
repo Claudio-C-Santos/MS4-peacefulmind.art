@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'home',
+    'products',
 
     # To try implement social media login
     #'allauth.socialaccount.providers.facebook',

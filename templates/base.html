@@ -69,13 +69,13 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                            <li><a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
+                            <li><a href="" class="dropdown-item">Product Management</a></li>
                             {% endif %}
-                            <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
-                            <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+                            <li><a href="" class="dropdown-item">My Profile</a></li>
+                            <li><a href="" class="dropdown-item">Logout</a></li>
                             {% else %}
-                            <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                            <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
+                            <li><a href="" class="dropdown-item">Register</a></li>
+                            <li><a href="" class="dropdown-item">Login</a></li>
                             {% endif %}
                         </ul>
                     </li>
