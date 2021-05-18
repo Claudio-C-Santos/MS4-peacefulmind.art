@@ -112,7 +112,59 @@ html {
     padding-top: 137px;
 }
 
-.carousel-item {
-    max-height: 500px;
-    min-width: auto;
+#IndexDiv {
+    height: 100vh;
+    position: relative;
 }
+
+#indexImage {
+    height: 100%;
+    opacity: 0.7;
+    position: absolute;
+}
+
+#IndexTitle {
+    position: absolute;
+    top: 100px;
+    left: 125px;
+    font-family: 'Amatic SC', cursive;
+    color: #493323;
+    font-size: 10rem;
+    text-shadow: 12px 12px 12px #cacaca
+}
+
+#IndexTitle1 {
+    position: absolute;
+    top: 550px;
+    left: 55px;
+    font-family: 'Amatic SC', cursive;
+    color: #493323;
+    font-size: 9rem;
+    text-shadow: 12px 12px 12px #cacaca;
+}
+
+#shopNowBtn {
+    position: absolute;
+    top: 180px;
+    left: 1400px;
+    width: 350px;
+    height: 80px;
+    background-color: rgba(255, 255, 0, 0.795);
+    border: none;
+    line-height: 40px;
+    font-size: 2rem;
+    color: #493323;
+}
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 -30px #ffffff; }
+  40% { box-shadow: 0 0 50px #ffffff; }
+  60% { box-shadow: 0 0 50px #ffffff; }
+  100% { box-shadow: 0 0 -30px #ffffff; }
+}
+
+.button-glow {
+  animation: glowing 5000ms infinite;
+}
+
+/*---------------Footer---------------*/
