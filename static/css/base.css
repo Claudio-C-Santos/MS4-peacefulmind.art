@@ -250,7 +250,7 @@ html {
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 
 .header-container {
-    padding-top: 64px;
+    padding-top: 137px;
 }
 
 #smallIndex {
@@ -365,8 +365,7 @@ footer {
     color: gray;
 }
 
-#productCard {
-    border-radius: 15px;
-    border: 1px solid #855e42;
-    margin: 5px;
+
+@media screen and (min-width: 321px) and (max-width: 425px) {
+
 }
