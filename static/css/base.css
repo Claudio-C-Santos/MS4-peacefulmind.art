@@ -119,6 +119,7 @@ html {
 
 #indexImage {
     height: 100%;
+    width: 100%;
     opacity: 0.7;
     position: absolute;
 }
@@ -126,34 +127,35 @@ html {
 #IndexTitle {
     position: absolute;
     top: 100px;
-    left: 125px;
+    left: 55px;
     font-family: 'Amatic SC', cursive;
     color: #493323;
-    font-size: 10rem;
+    font-size: 9rem;
     text-shadow: 12px 12px 12px #cacaca
 }
 
 #IndexTitle1 {
     position: absolute;
-    top: 550px;
+    top: 500px;
     left: 55px;
     font-family: 'Amatic SC', cursive;
     color: #493323;
-    font-size: 9rem;
+    font-size: 5rem;
     text-shadow: 12px 12px 12px #cacaca;
 }
 
 #shopNowBtn {
     position: absolute;
     top: 180px;
-    left: 1400px;
+    right: 75px;
     width: 350px;
     height: 80px;
-    background-color: rgba(255, 255, 0, 0.795);
+    background-color: #e3d5dc;
     border: none;
-    line-height: 40px;
+    line-height: 60px;
     font-size: 2rem;
     color: #493323;
+    border: 3px solid #bfa08b;
 }
 
 @keyframes glowing {
@@ -167,11 +169,150 @@ html {
   animation: glowing 5000ms infinite;
 }
 
+@media screen and (min-width: 321px) and (max-width: 425px) {
+
+.header-container {
+    padding-top: 80px;
+}
+
+#IndexDiv {
+    background-color: #bfa08b;
+    width: 100vw;
+    height: 100vh;
+}
+
+#IndexTitle {
+    font-size: 3rem;
+    top: 500px;
+    left: 0px;
+    margin: 25px;
+}
+
+#IndexTitle1 {
+    font-size: 2rem;
+    top: 600px;
+    left: 0px;
+    margin: 25px;
+}
+
+#shopNowBtn {
+    top: 760px;
+    left: 0px;
+    margin: 25px;
+    width: 150px;
+    height: 50px;
+    line-height: 25px;
+    font-size: 1rem;
+}
+
+#indexImage {
+    display: none;
+}
+
+#smallIndex {
+    opacity: 0.7;
+}
+
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+
+.header-container {
+    padding-top: 64px;
+}
+
+#smallIndex {
+    display: none;
+}
+
+#IndexTitle {
+    font-size: 4rem;
+    top: 120px;
+    left: 45px;
+}
+
+#IndexTitle1 {
+    font-size: 2rem;
+    top: 670px;
+}
+
+#shopNowBtn {
+    width: 150px;
+    height: 50px;
+    line-height: 25px;
+    font-size: 1rem;
+    top: 200px;
+    right: 65px;
+}
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+.header-container {
+    padding-top: 64px;
+}
+
+#smallIndex {
+    display: none;
+}
+
+#IndexTitle {
+    font-size: 6rem;
+    top: 120px;
+    left: 45px;
+}
+
+#IndexTitle1 {
+    font-size: 3rem;
+    top: 670px;
+}
+
+#shopNowBtn {
+    width: 250px;
+    height: 75px;
+    line-height: 55px;
+    font-size: 1,5rem;
+    top: 200px;
+    right: 65px;
+}
+
+#user-options {
+    padding: 4px 8px 4px 8px;
+}
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+
+#IndexTitle {
+    font-size: 7rem;
+}
+
+#smallIndex {
+    display: none;
+}
+
+#IndexTitle1 {
+    font-size: 3rem;
+}
+ 
+}
+
+@media screen and (min-width: 1441px) {
+
+#smallIndex {
+    display: none;
+}
+
+}
+
 /*---------------Footer---------------*/
 
 footer {
     background-color: #855e42;
     height: auto;
+    width: 100vw;
 }
 
 #footerTitle {
