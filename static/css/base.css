@@ -359,6 +359,10 @@ footer {
     color: #855e42;
 }
 
+.productDescription {
+    color: #3d3b39;
+}
+
 #productCard {
     border-radius: 15px;
     border: 1px solid #855e42;
