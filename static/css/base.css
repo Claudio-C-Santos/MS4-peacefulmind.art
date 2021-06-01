@@ -346,3 +346,21 @@ footer {
 .divisor {
     margin: auto;
 }
+
+.productImage {
+    margin-top: 12px;
+}
+
+.productName {
+    color: #855e42;
+}
+
+.productPrice {
+    color: #855e42;
+}
+
+#productCard {
+    border-radius: 15px;
+    border: 1px solid #855e42;
+    margin: 5px;
+}
