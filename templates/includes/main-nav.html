@@ -12,20 +12,26 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="hvr-underline-from-left nav-link" href="#">
+            <a class="hvr-underline-from-left nav-link" href="{% url 'products' %}?category=pendants">
                 Pendants
             </a>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="hvr-underline-from-left nav-link" href="#">
+            <a class="hvr-underline-from-left nav-link" href="{% url 'products' %}?category=rings">
                 Rings
             </a>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="hvr-underline-from-left nav-link" href="#">
-                Earrings
+            <a class="hvr-underline-from-left nav-link" href="{% url 'products' %}?category=sale">
+                Sale
+            </a>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="hvr-underline-from-left nav-link" href="{% url 'products' %}?category=special_edition">
+                Special Edition
             </a>
         </li>
     </ul>
