@@ -356,11 +356,13 @@ footer {
 }
 
 .productPrice {
-    color: #855e42;
+    color: rgb(70, 70, 70);
+    font-weight: bold;
+    font-size: 2rem;
 }
 
 .productDescription {
-    color: #3d3b39;
+    color: gray;
 }
 
 #productCard {
