@@ -374,7 +374,7 @@ footer {
     background-color: #855e42;
 }
 
-/*---------------Shopping Bag---------------*/
+/*---------------Product Details---------------*/
 
 #keepShopping {
     width: 250px;
@@ -387,6 +387,39 @@ footer {
 }
 
 #addToBag {
+    width: 250px;
+    height: 40px;
+    background-color: #bfa08b;
+    line-height: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #493323;
+    border: 3px solid #855e42;
+}
+
+/*---------------Shopping Bag---------------*/
+
+.bagProduct {
+    max-height: 50px;
+    align-items: center;
+}
+
+.productThumbnail {
+    padding-right: 15px;
+    width: 100px;
+}
+
+.bagList .bagItems:hover {
+    background-color: #ffe3d08f;
+} 
+
+.grandTotal {
+    padding: 10px;
+    color: #f9f7f5;
+    background-color: #855e42;
+}
+
+#checktouBtn {
     width: 250px;
     height: 40px;
     background-color: #bfa08b;
