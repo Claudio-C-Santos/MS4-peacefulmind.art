@@ -151,7 +151,6 @@ html {
     width: 350px;
     height: 80px;
     background-color: #e3d5dc;
-    border: none;
     line-height: 60px;
     font-size: 2rem;
     color: #493323;
@@ -373,4 +372,27 @@ footer {
 #categoryIndicator {
     font-size: 1rem;
     background-color: #855e42;
+}
+
+/*---------------Shopping Bag---------------*/
+
+#keepShopping {
+    width: 250px;
+    height: 40px;
+    background-color: #e3d5dc;
+    line-height: 20px;
+    font-size: 1rem;
+    color: #493323;
+    border: 3px solid #bfa08b;
+}
+
+#addToBag {
+    width: 250px;
+    height: 40px;
+    background-color: #bfa08b;
+    line-height: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #493323;
+    border: 3px solid #855e42;
 }
