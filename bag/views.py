@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse, HttpResponse
 
 
 def view_bag(request):
@@ -8,9 +8,9 @@ def view_bag(request):
 
 
 def add_to_bag(request, item_id):
+    bag = request.session.get('bag', {})
 
     redirect_url = request.POST.get('redirect_url')
-    bag = request.session.get('bag', {})
 
     if item_id in list(bag.keys()):
         """ Create a message 'This item is already in your shopping bag' """
@@ -19,3 +19,15 @@ def add_to_bag(request, item_id):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
+
+
+def remove_product(request, item_id):
+    """ This view will remove the selected product from the bag """
+
+    bag = request.session.get('bag', {})
+
+    bag.pop(item_id)
+
+    request.session['bag'] = bag
+    
+    return redirect(reverse('view_bag'))

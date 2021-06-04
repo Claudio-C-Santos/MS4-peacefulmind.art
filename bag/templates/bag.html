@@ -30,6 +30,7 @@
                                     <th scope="col">Product Info</th>
                                     <th scope="col"></th>
                                     <th scope="col" class="text-end">Price</th>
+                                    <th scope="col"></th>
                                 </tr> 
                             </thead>                            
                             {% for item in bag_items %}
@@ -49,6 +50,9 @@
                                 <td class="py-3"></td>
                                 <td class="py-3">
                                     <p class="my-0 text-end">${{ item.product.price }}</p>
+                                </td>
+                                <td class="py-5 text-center">
+                                    <a class="removeBtn" id="remove_{{ item.item_id }}" href="{% url 'remove_product' item.item_id %}">Delete</a>
                                 </td>
                             </tr>
                             {% endfor %}
