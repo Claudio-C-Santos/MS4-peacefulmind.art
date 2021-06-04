@@ -157,6 +157,7 @@ html {
     border: 3px solid #bfa08b;
 }
 
+
 @keyframes glowing {
   0% { box-shadow: 0 0 -30px #ffffff; }
   40% { box-shadow: 0 0 50px #ffffff; }
@@ -304,6 +305,33 @@ html {
     display: none;
 }
 
+}
+
+/*---------------Message Containers---------------*/
+
+.message-container {
+    position: fixed;
+    top: 140px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+.closeBtn {
+    position: absolute;
+    right: 5px;
+    border: none;
+    background-color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #855e42;
 }
 
 /*---------------Footer---------------*/
