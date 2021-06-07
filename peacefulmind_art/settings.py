@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'home',
     'products',
     'bag',
+    'checkout',
+
+    'crispy_forms'
 
     # To try implement social media login
     #'allauth.socialaccount.providers.facebook',
@@ -80,7 +83,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'peacefulmind_art.urls'
+ROOT_URLCONF = 'peacefulmind_art.urls' 
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -96,8 +101,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'bag.context.bag_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]

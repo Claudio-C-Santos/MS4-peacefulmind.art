@@ -404,7 +404,7 @@ footer {
 
 /*---------------Product Details---------------*/
 
-#keepShopping {
+.keepShopping {
     width: 250px;
     height: 40px;
     background-color: #e3d5dc;
@@ -447,7 +447,7 @@ footer {
     background-color: #855e42;
 }
 
-#checktouBtn {
+.checktouBtn {
     width: 250px;
     height: 40px;
     background-color: #bfa08b;
@@ -471,4 +471,22 @@ footer {
     cursor: pointer;
     background-color: rgb(214, 0, 0);
     color: #f9f7f5;
+}
+
+/*---------------Checkout---------------*/
+
+.checkoutDivisor {
+    color: #855e42;;
+}
+
+.checkoutBold {
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-check {
+    padding-left: 0px;
 }
