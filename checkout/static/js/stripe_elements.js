@@ -4,6 +4,7 @@ var client_secret = $('#id_client_secret').text().slice(1,-1);
 
 /* Instantiate Stripe, pass public key and mount it */
 var stripe = Stripe(stripe_public_key);
+console.log(stripe)
 var elements = stripe.elements();
 
 var style = {
