@@ -34,6 +34,8 @@ def checkout(request):
         if order_form.is_valid():
             order = order_form.save()
             for item_id, item_data in bag.items():
+                #TODO: Make sure that item_id is an integer
+                item_id = int(item_id)
                 try:
                     product = Product.objects.get(id=item_id)
                     if isinstance(item_id, int):
