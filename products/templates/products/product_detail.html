@@ -29,7 +29,9 @@
             <h1 class="productName mt-5 mb-4 fw-bold"><ins><strong>{{ product.name }}</strong></ins></h1>
             <p class="CategoryName mb-0 mb-4"><i class="fas fa-tag"></i><strong> {{ product.category.friendly_name }}</strong></p>
             <h2 class="productPrice lead mb-0 text-left fw-bold">€{{ product.price }}</h2>
-            <h7 class="mb-0 text-left">Price including VAT</h7>
+            <h7 class="mb-5 text-left">Price including VAT</h7>
+            <h6 class="mt-5 mb-1 text-left">Material: </h6>
+            <span class="mb-0 text-left">{{ product.material }}</span>
             <h4 class="productDescription mt-5">{{ product.description }}</h4>
             <form method="POST" class="form" action="{% url 'add_to_bag' product.id %}">
                 {% csrf_token %}
