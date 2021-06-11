@@ -20,10 +20,10 @@ class OrderForm(forms.ModelForm):
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
-            'postcode': 'Postal Code',
-            'town_or_city': 'Town or City',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
+            'postcode': 'Postal Code',
+            'town_or_city': 'Town or City',
             'county': 'County, State or Locality',
         }
 

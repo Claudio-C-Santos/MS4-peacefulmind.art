@@ -125,16 +125,16 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 8
 LOGIN_URL = '/accounts/login/'
-# Page to where the user should be redirected once the login is completed
-LOGIN_REDIRECT_URL = '/'
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Page to where the user should be redirected once  the login is completed
+LOGIN_REDIRECT_URL = '/ '
 
 WSGI_APPLICATION = 'peacefulmind_art.wsgi.application'
 
