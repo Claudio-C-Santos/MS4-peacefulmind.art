@@ -134,7 +134,7 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 8
 LOGIN_URL = '/accounts/login/'
 # Page to where the user should be redirected once  the login is completed
-LOGIN_REDIRECT_URL = '/ '
+LOGIN_REDIRECT_URL = '/profile'
 
 WSGI_APPLICATION = 'peacefulmind_art.wsgi.application'
 

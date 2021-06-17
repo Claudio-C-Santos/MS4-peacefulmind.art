@@ -521,8 +521,6 @@ select option[value=""] {
     box-shadow: 0 0 0 0.25rem rgb(133 94 66 / 25%);
 }
 
-
-
 /*---------------Stripe Elements---------------*/
 
 .StripeElement,
@@ -561,3 +559,5 @@ select option[value=""] {
 .orderDetailsTotals {
     font-weight: bold;
 }
+
+
