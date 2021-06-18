@@ -65,7 +65,19 @@ def product_detail(request, product_id):
 
 
 def add_product(request):
+    """ Allows the superuser to manage products by adding a product """
     form = ProductForm()
+
+    if request.method == "POST":
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Product has successfully added to your store!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Something went wrong! Please ensure all details are correctly inserted.')
+    else:
+        form = ProductForm()
 
     template = 'products/add_product.html'
 
