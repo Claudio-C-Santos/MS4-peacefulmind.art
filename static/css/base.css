@@ -560,4 +560,11 @@ select option[value=""] {
     font-weight: bold;
 }
 
+/*---------------Profile---------------*/
+
+.order-history {
+    max-height: 416px;
+    overflow-y: auto;
+}
+
 
