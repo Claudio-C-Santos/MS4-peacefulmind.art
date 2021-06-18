@@ -191,10 +191,20 @@
             </div>
         </div>
         <div class="row">
-			<div class="col-12 col-lg-7 text-right mt-2 mb-2">
-				<span class="text-uppercase">If any of the details above are incorrect please contact us as soon as possible. <br> 
+            <div class="col-12 col-lg-7 text-right mt-2 mb-2">
+                <span class="text-uppercase">If any of the details above are incorrect please contact us as soon as
+                    possible. <br>
                     Don't forget to provide your Order Number.</span>
-			</div>
-		</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-7 mt-4 mb-4">
+                {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="btn keepShopping">
+                        <span>Back to Profile</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
     </div>
 {% endblock %}
