@@ -41,6 +41,23 @@
                     </a>
                     <input id="addToBag" type="submit" class="btn" value="Add to bag">
                 </div>
+
+                {% if request.user.is_superuser %}
+                <div class="row">
+                    <div class="col mt-5">
+                        <h3 class="mb-2">Product Management</h3>
+                        <hr class="divisor">
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <a class="btn editProduct" href="{% url 'edit_product' product.id %}">
+                        <span>Edit Product</span>
+                    </a>
+                    <a class="btn deleteProduct" href="{% url 'confirm_delete' product.id %}">
+                        <span>Delete Product</span>
+                    </a>
+                </div>
+                {% endif %}
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
         </div>

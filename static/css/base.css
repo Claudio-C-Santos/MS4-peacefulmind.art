@@ -422,7 +422,27 @@ footer {
     font-size: 1rem;
     font-weight: bold;
     color: #493323;
-    border: 3px solid #855e42;
+    border: 3px solid #854242;
+}
+
+.editProduct {
+    width: 250px;
+    height: 40px;
+    background-color: #ff7b009f;
+    line-height: 20px;
+    font-size: 1rem;
+    color: #493323;
+    border: 3px solid #bfa08b;
+}
+
+.deleteProduct {
+    width: 250px;
+    height: 40px;
+    background-color: #ff0000a6;
+    line-height: 20px;
+    font-size: 1rem;
+    color: #493323;
+    border: 3px solid #bf8b8b;
 }
 
 /*---------------Shopping Bag---------------*/
