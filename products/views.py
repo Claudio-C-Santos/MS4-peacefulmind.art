@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category
@@ -64,8 +65,12 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
+@login_required
 def add_product(request):
     """ Allows the superuser to manage products by adding a product """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry but you are not authorized to do this. Contact the store manager.')
+
     form = ProductForm()
 
     if request.method == "POST":
@@ -88,8 +93,12 @@ def add_product(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_product(request, product_id):
     """ Allows the superuser to manage products by editing a product """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry but you are not authorized to do this. Contact the store manager.')
+
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -113,9 +122,14 @@ def edit_product(request, product_id):
     return render(request, template, context)
 
 
+@login_required
 def confirm_delete(request, product_id):
+    """ Checks if the user really want to delete the product """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry but you are not authorized to do this. Contact the store manager.')
+
     product = get_object_or_404(Product, pk=product_id)
-    
+      
     context = {
         'product': product,
     }
@@ -123,7 +137,11 @@ def confirm_delete(request, product_id):
     return render(request, 'products/delete_product.html', context)
 
 
+@login_required
 def delete_product(request, product_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry but you are not authorized to do this. Contact the store manager.')
+        
     product = get_object_or_404(Product, pk=product_id)
 
     product.delete()

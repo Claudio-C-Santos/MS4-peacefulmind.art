@@ -1,1 +1,5 @@
 [] Style 'email confirmation' and 'email confirmed' templates
+
+[] Stick Footer to bottom of page
+
+[] Nav bar when clicked turns blue, change

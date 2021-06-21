@@ -213,6 +213,10 @@ html {
     opacity: 0.7;
 }
 
+.navbar {
+    padding-left: 24px;
+}
+
 }
 
 @media screen and (min-width: 426px) and (max-width: 768px) {
@@ -445,6 +449,40 @@ footer {
     border: 3px solid #bf8b8b;
 }
 
+.container-fluid {
+    padding-left: 0px;
+}
+
+@media screen and (max-width: 425px) {
+    .productName {
+        margin-top: 0px!important;
+    }
+
+    .prodDetails {
+    padding-left: 12px;
+    padding-right: 12px;
+    }
+
+    #addToBag,
+    .keepShopping,
+    .editProduct,
+    .deleteProduct {
+        width: 175px;
+    }
+
+    .prodDetailsBtn {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .detailsDiv {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+}
+
 /*---------------Shopping Bag---------------*/
 
 .bagProduct {
@@ -580,6 +618,11 @@ select option[value=""] {
     font-weight: bold;
 }
 
+@media screen (max-width: 425px) {
+    .center {
+        text-align: center;
+    }
+}
 /*---------------Profile---------------*/
 
 .order-history {
@@ -591,4 +634,23 @@ select option[value=""] {
     border-radius: 0.25rem!important;
 }
 
+/*---------------Sign Out Page---------------*/
 
+@media screen and (max-width: 425px) {
+    .btnCenter {
+        text-align: center;
+    }
+
+    .checktouBtn {
+        margin-top: 15px;
+    }
+}
+
+/*---------------Sign In Page---------------*/
+
+@media screen and (max-width: 425px) {
+    #div_id_remember {
+        float: right;
+    }
+
+}
