@@ -654,3 +654,39 @@ select option[value=""] {
     }
 
 }
+
+/*---------------Community Cards---------------*/
+
+.communityCard {
+    padding: 5px;
+    box-shadow: 5px 10px 10px #bfa08b;
+    border-radius: 25px;
+}
+
+.cardTitle {
+    padding: 16px;
+    border-radius: 25px;
+}
+
+.card-footer {
+    background-color: white;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 25px;
+}
+
+.websiteLink {
+    color: black;
+    text-decoration: none;
+}
+
+.deleteCard {
+    width: 100px;
+    height: 30px;
+    line-height: 15px;
+    text-decoration: none;
+    color: black;
+    background-color: #bfa08b;
+    border: 3px solid #855e42;
+    border-radius: 0.25rem;
+}
