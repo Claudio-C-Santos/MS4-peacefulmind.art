@@ -3,3 +3,5 @@
 [] Stick Footer to bottom of page
 
 [] Nav bar when clicked turns blue, change
+
+[] Change Product model to include a dropdown in the material field

@@ -29,8 +29,7 @@ def cache_checkout_data(request):
     except Exception as e:
         messages.error(request, 'Sorry but your payment cannot be processed at the moment. Please try again later.')
         return HttpResponse(content=e, status=400)
-
-
+        
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY

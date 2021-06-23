@@ -21,7 +21,7 @@
     </div>
 
     <div class="row">
-        <form method="POST" action="{% url 'add_product' %}" class="form mb-2 mt-2" enctype="multipart/form-data">
+        <form method="POST" action="{% url 'add_product' %}" class="form mb-2 mt-2" enctype="multipart/form-data" novalidate>
             {% csrf_token %}
             {{ form | crispy }}
             <div class="text-end">

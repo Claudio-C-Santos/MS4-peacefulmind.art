@@ -5,4 +5,5 @@ from . import views
 
 urlpatterns = [
     path('', views.community, name='community'),
+    path('new_card/', views.newCard, name='new_card'),
 ]
