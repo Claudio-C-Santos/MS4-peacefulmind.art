@@ -20,12 +20,12 @@
         </div>
     </div>
     <div class="row">
-        <form action="{% url 'customOrder' %}" method=POST>
+        <form action="{% url 'custom_orders' %}" method=POST>
             {% csrf_token %}
             {{ customOrder | crispy }}
             <div class="text-end mt-4 mb-4">
                 <a class="btn keepShopping" href="">Back to Community</a>
-                <button class="btn checktouBtn" type="submit">Submit Business</button>
+                <button class="btn checktouBtn" type="submit">Submit Order</button>
             </div>
         </form>
     </div>
