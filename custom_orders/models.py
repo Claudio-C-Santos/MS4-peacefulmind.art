@@ -4,7 +4,7 @@ from django_countries.fields import CountryField
 
 class customOrder(models.Model):
     name = models.CharField(max_length=254)
-    email = models.CharField(max_length=20)
+    email = models.CharField(max_length=254)
     street_address1 = models.CharField(max_length=80)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     town_or_city = models.CharField(max_length=40)

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col mt-3">
+            <h2>Custom Orders Pending</h2>
+            <hr class="divisor">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="order-history table-responsive">
+                <table class="table table-sm table-borderless">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Country</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for customOrder in pending_order %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'custom_order_details' custom_order.id %}" title="{{ customOrder.name }}">
+                                    {{ customOrder.name }}
+                                </a>
+                            </td>
+                            <td>{{ customOrder.date }}</td>
+                            <td>{{ customOrder.country }}</td>
+                            <td>{{ customOrder.email }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

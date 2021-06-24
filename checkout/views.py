@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.conf import settings
 from django.views.decorators.http import require_POST
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
@@ -30,6 +31,7 @@ def cache_checkout_data(request):
         messages.error(request, 'Sorry but your payment cannot be processed at the moment. Please try again later.')
         return HttpResponse(content=e, status=400)
         
+
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -132,9 +134,7 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-    """
-    Handle successful checkouts
-    """
+    """ Handle successful checkouts """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
