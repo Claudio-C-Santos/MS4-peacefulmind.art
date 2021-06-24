@@ -33,7 +33,7 @@
                         {% for customOrder in pending_order %}
                         <tr>
                             <td>
-                                <a href="{% url 'custom_order_details' custom_order.id %}" title="{{ customOrder.name }}">
+                                <a href="{% url 'custom_order_details' customOrder.id %}">
                                     {{ customOrder.name }}
                                 </a>
                             </td>

@@ -39,13 +39,22 @@ def pending_orders(request):
     return render(request, template, context)
 
 
-def custom_order_details(request, custom_order_number):
-    custom_order = get_object_or_404(customOrder, order_number=custom_order_number)
+def custom_order_details(request, custom_order_id):
+    custom_order = get_object_or_404(customOrder, pk=custom_order_id)
 
     template = 'custom_order_details.html'
+    
     context = {
         'custom_order': custom_order,
     }
 
     return render(request, template, context)
+
+
+def custom_order_completed(request, custom_order_id):
+    custom_order = get_object_or_404(customOrder, pk=custom_order_id)
+
+    custom_order.delete()
+    
+    return redirect(reverse('pending_orders'))
 
