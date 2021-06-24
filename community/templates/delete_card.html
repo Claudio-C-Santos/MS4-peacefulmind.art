@@ -13,12 +13,8 @@
 <div class="container">
     <div class="row">
         <div class="col mt-3">
-            <h2>Community</h2>
+            <h2>Are you sure you want to delete it?</h2>
             <hr class="divisor">
-            <p class="mt-3">This area is reserved to provide a service to the community. Every client with an account
-                created can publish a community card promoting
-                another business.
-            </p>
         </div>
     </div>
     <div class="row">
@@ -35,7 +31,12 @@
                         </div>
                         <hr>
                         <div class="col text-center mt-1 mb-1">
-                            <a class="deleteCard" href="{% url 'delete_card' card.card_number %}">Are you sure?</a>
+                            <a class="deleteCard" href="{% url 'delete_card' card.card_number %}">
+                                <span class="spanCommunity">Yes</span>
+                            </a>
+                            <a class="deleteCard ms-2" href="{% url 'community' %}">
+                                <span class="spanCommunity">No</span>
+                            </a>
                         </div>
                     </div>
                 </div>

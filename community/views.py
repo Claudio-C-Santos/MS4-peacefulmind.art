@@ -65,7 +65,7 @@ def delete_card(request, card_id):
     card = get_object_or_404(communityCard, pk=card_id)
 
     card.delete()
-    messages.success(request, f'{card.name} has been successfully deleted!')
+    messages.success(request, f"{card.name}'s business card has been successfully deleted!")
 
     return redirect(reverse('community'))
 

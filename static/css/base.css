@@ -690,3 +690,7 @@ select option[value=""] {
     border: 3px solid #855e42;
     border-radius: 0.25rem;
 }
+
+.spanCommunity {
+    padding: 10px;
+}
