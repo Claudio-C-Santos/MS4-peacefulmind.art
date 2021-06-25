@@ -1,7 +1,7 @@
-[] Style 'email confirmation' and 'email confirmed' templates
-
 [] Stick Footer to bottom of page
 
 [] Nav bar when clicked turns blue, change
 
-[] Change Product model to include a dropdown in the material field
+[] User must have an account to checkout
+
+[] Sorting not working
