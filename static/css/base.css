@@ -505,7 +505,7 @@ footer {
     background-color: #855e42;
 }
 
-.checktouBtn {
+.checkoutBtn {
     width: 250px;
     height: 40px;
     background-color: #bfa08b;
@@ -641,7 +641,7 @@ select option[value=""] {
         text-align: center;
     }
 
-    .checktouBtn {
+    .checkoutBtn {
         margin-top: 15px;
     }
 }
