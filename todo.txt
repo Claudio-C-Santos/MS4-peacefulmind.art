@@ -1,3 +1,1 @@
-[] User must have an account to checkout
-
 [] Sorting not working

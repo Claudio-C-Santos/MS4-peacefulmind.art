@@ -12,7 +12,7 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-2 prodImage">
             <div class="image-container my-5">
                 {% if product.image %}
                 <a href="{{ product.image.url }}" targe=_blank>
@@ -25,7 +25,7 @@
                 {% endif %}
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="col-12 col-md-6 col-lg-4 detailsDiv">
             <h1 class="productName mt-5 mb-4 fw-bold"><ins><strong>{{ product.name }}</strong></ins></h1>
             <p class="CategoryName mb-0 mb-4"><i class="fas fa-tag"></i><strong>
                     {{ product.category.friendly_name }}</strong></p>
@@ -41,7 +41,7 @@
                     <hr class="divisor">
                 </div>
             </div>
-            <div class="col-12 mt-3">
+            <div class="col-12 mt-3 text-center confirmBtn">
                 <a class="btn editProduct" href="{% url 'product_detail' product.id %}">
                     <span>No</span>
                 </a>
