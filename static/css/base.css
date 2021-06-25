@@ -418,6 +418,10 @@ footer {
     border: 3px solid #bfa08b;
 }
 
+.keepShopping:focus {
+    box-shadow: 0 0 0 0.25rem #bfa08b;
+}
+
 #addToBag {
     width: 250px;
     height: 40px;
@@ -514,6 +518,10 @@ footer {
     font-weight: bold;
     color: #493323;
     border: 3px solid #855e42;
+}
+
+.checkoutBtn:focus {
+    box-shadow: 0 0 0 0.25rem #bfa08b;
 }
 
 #bagBtns {

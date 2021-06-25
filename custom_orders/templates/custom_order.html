@@ -24,7 +24,7 @@
             {% csrf_token %}
             {{ customOrder | crispy }}
             <div class="text-end mt-4 mb-4">
-                <a class="btn keepShopping" href="">Back to Community</a>
+                <a class="btn keepShopping" href="{% url 'home' %}">Back</a>
                 <button class="btn checkoutBtn" type="submit">Submit Order</button>
             </div>
         </form>
