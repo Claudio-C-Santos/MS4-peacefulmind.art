@@ -1,7 +1,3 @@
-[] Stick Footer to bottom of page
-
-[] Nav bar when clicked turns blue, change
-
 [] User must have an account to checkout
 
 [] Sorting not working

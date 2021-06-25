@@ -79,6 +79,10 @@
                                             <i class="fas fa-lock"></i>
                                         </span>
                                     </a>
+                                    {% if user.is_authenticated %}
+                                    {% else %}
+                                        <p class="text-danger">You need to be logged in to proceed with the checkout</p>
+                                    {% endif %}
                                 </td>
                             </tr>
                         </table>

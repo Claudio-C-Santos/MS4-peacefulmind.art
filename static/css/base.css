@@ -47,6 +47,10 @@ body{
     padding-left: 8px;
 }
 
+.dropdown-item:active {
+    background-color: #df9b6a;
+}
+
 /*---------------NavBar---------------*/
 .navbar {
     color: white;
