@@ -670,6 +670,28 @@ footer {
     color: #f9f7f5;
 }
 
+@media screen and (min-width: 376px) and (max-width: 425px) {
+    .keepShopping {
+        width: 250px;
+    }
+
+    .checkoutBtn {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .keepShopping {
+        width: 250px;
+    }
+
+    .checkoutBtn {
+        width: 250px;
+    }
+}
+
+
+
 /*---------------Checkout---------------*/
 
 .checkoutDivisor {
