@@ -1,45 +1,43 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Peacefulmind.art
 
-Welcome Claudio-C-Santos,
+This e-commerce platform was was designed and built in order to scale an already existing business. This business is the selling of handmade craft jewelry 
+which has been running on Instagram using DMs to complete the sell. The intention is to automate most of the processes and allow the store owner to reach a bigger number of clients
+and allow them to make their payments securely and hassle free via Stripe's payment system. With this platform up and running, the store owner only needs to monitor the orders and
+post them itself. The platform requests the client to create an account in order to save their details and previous orders so make future purchases more efficient and easy for the client.
+Besides the already crafted jewelry, the client has the option to make a custom order also through the platform. The client just needs to fill a form and include their requirements
+for a custom made craft jewel.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+Besides the business itself, on this platform there's a sub-platform called "Community" that has the goal of helping other small business to exposes themselves and hopefully reach
+out to a bigger number of clients. This idea came from the very essence of "sharing is caring" that rules the store owner's life.
 
-## Gitpod Reminders
+A live demo of website can be found [here](###########################).
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## UX
 
-`python3 -m http.server`
+THe main users of this platform is everyone who desires to purchase a piece of jewelry which won't be found anywhere else, there's no more exlusive than this.
 
-A blue button should appear to click: _Make Public_,
+The navigation is very user friendly, starting with and index page that has all the links displayed and easy to see. On the top bar, on the right, there are the account, community and shopping bag icons
+abnd just bellow are the links that divide the entire stock into categories in order to make ir easier for the client to search for exactly what it wants.
 
-Another blue button should appear to click: _Open Browser_.
+The footer allows the client to learn more about the store owner by reading a small biography and checking his intagram page. The custom order link is also in this area.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+<img src="static/readme_screenshots/Index.jpg" alt="Index Screenshot">
 
-A blue button should appear to click: _Make Public_,
+### User Stories
 
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
----
-
-Happy coding!
+- As an anonymous user, I want to be able to browse through the whole jewelry stock or browse over just one specific category.
+- As an anonymous user, I want to be able to search through the whole jewelry stock.
+- As an anonymous user, I want to be able to browse through the community in order to check what other business are being marketed.
+- As an anonymous user, I want to be able to create my own account and become a registered client.
+- As an anonymous user and a registered client, I want to know more about the owner of this store by reading about him and checking social media.
+- As an anonymous user and a registered client, I want to be able to submit a custom jewel request. As an anonymous user I want to be able to make this request and possibily receive
+a quote before having to commit to registering.
+- As a registered client, I want to easily add a desired product to my shopping bag.
+- As a registered client, I want to be able to delete a product from the shopping bag.
+- As a registered client, I want to be able to pay for my purchases in a easy way.
+- As a registered client, I want to be able to save my personal details to use them on my next purchase. Besides this I want to be able to update these details.
+- As a registered client, I want to be able to check my previous orders.
+- As a registered client, I want to be able to submit a community card in order to share my own or someone else's business.
+- As the store owner, I want to be able to manage my products by adding new products, editing or deleting existing ones.
+- As the store owner, I want to be able to manage the community cards by deleting the ones I find not relevant.
+ 
