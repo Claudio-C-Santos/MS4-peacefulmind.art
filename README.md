@@ -40,4 +40,148 @@ a quote before having to commit to registering.
 - As a registered client, I want to be able to submit a community card in order to share my own or someone else's business.
 - As the store owner, I want to be able to manage my products by adding new products, editing or deleting existing ones.
 - As the store owner, I want to be able to manage the community cards by deleting the ones I find not relevant.
- 
+
+### Strategy
+
+The goal of this project is to give a chance of this small business to reach out to a bigger number of possible clients. In a world where chain business where everything is standard is the 
+norm, causing that everyone has the same clothes everywhere, promoting small and medium businesses should be a priority. Enterpreneurs that use their creativity to make the world an exciting
+and diverse place should be praise and supported. 
+
+### Strategy
+
+This platform was built with the goal of promoting this small and individual business.
+
+### Wireframes
+
+* Index
+
+<img src="static/wireframes/index.jpg" alt="Index Wireframe">
+
+* Products List
+
+<img src="static/wireframes/products.jpg" alt="Products Wireframe">
+
+* Product Details
+
+<img src="static/wireframes/product_details.jpg" alt="Product Details Wireframe">
+
+* Profile Page
+
+<img src="static/wireframes/profile.jpg" alt="Profile Page Wireframe">
+
+* Community Page
+
+<img src="static/wireframes/community.png" alt="Community Page Wireframe">
+
+* Shopping Bag Page
+
+<img src="static/wireframes/bag.jpg" alt="Shopping Bag Wireframe">
+
+### Surface
+
+The palette of colors chosen was based on the craftsman's personality.
+
+## DATA
+
+### Databases
+
+Sqlite3 was used during development. For deployment, data tables and data was migrated to a PostgreSQL database.
+
+### Data models
+
+#### Products app
+
+##### Product Model
+
+| **Field**   | **Type**       | **Notes**                   |
+|:----------- |:-------------- |:----------------------------|
+| category    | ForeignKey     | Category                    |
+| sku         | CharField      | Jewel's internal code       |
+| name        | CharField      | Jewel's name                |
+| description | Textfield      | Jewel's description         |
+| material    | CharField      | Materials used              |
+| price       | DecimalField   | Jewel's Price               |
+| image       | ImageField     | Jewel's image               |
+
+##### Category Model
+
+| **Field**     | **Type**       | **Notes**                   |
+|:------------- |:-------------- |:----------------------------|
+| name          | CharField      | Category's name             |
+| friendly_name | CharField      | Category's friendly name    |
+
+#### Profile app
+
+##### User Profile Model
+
+| **Field**        | **Type**       | **Notes**                   |
+|:---------------- |:-------------- |:----------------------------|
+| user             | CharField      | User's nickname             |
+| phone number     | CharField      | User's Phone Number                |
+| street_address1  | CharField      | User's Address                     |
+| street_address2  | CharField      | User's Address                     |
+| town or city     | CharField      | User's Town or City                |
+| postcode         | CharField      | User's Postcode                    |
+| county           | ImageField     | User's County                      |
+| country          | CountryField   | User's Country                     |
+
+#### Checkout app
+
+##### Order Model
+
+| **Field**        | **Type**       | **Notes**              |
+|:---------------- |:-------------- |:-----------------------|
+| order_number     | CharField      | Order's Name           |
+| user_profile     | ForeignKey     | User's Nickname        |
+| full_name        | CharField      | User's Full Name       |
+| email            | EmailField     | User's email address   |
+| phone_number     | CharField      | User's Phone Number    |
+| country          | CountryField   | User's Country         |
+| postcode         | CharField      | User's Postcode        |
+| street_address1  | CharField      | User's Address         |
+| street_address2  | CharField      | User's Address         |
+| county           | CharField      | User's County          |
+| date             | DateTimeField  | Order's Date           |
+| delivery_cost    | DecimalField   | Order's Delivery Cost  |
+| order_total      | DecimalField   | Order's Product Cost   |
+| grand_total      | DecimalField   | Order's Grande Total   |
+| original_bag     | TextField      | Order's Original Bag   |
+| stripe_pid       | CharField      | Stripe ID              |
+
+#### Community app
+
+##### Community Card Model
+
+| **Field**        | **Type**      | **Notes**                             |
+|:---------------- |:------------- |:--------------------------------------|
+| card_number      | AutoField     | Card Number (See note below)          |
+| name             | CharField     | Card Name                             |
+| website          | URLField      | Business' Website                     |
+| description      | TextField     | Small description about the business  |
+| email            | CharField     | Business' email                       |
+| date             | DateTimeField | Date card was created                 |
+
+Note: This field was created to be used as an argument for the deletion view but then became useless when decided to use the element's ID for it.
+The reason why it wasn't deleted was because it was creating some conflicts in the database so I just left this field in.
+
+#### Custom Orders app
+
+##### Custom Order Model
+
+| **Field**        | **Type**      | **Notes**                                |
+|:---------------- |:------------- |:-----------------------------------------|
+| name             | CharField     | User's Name                              |
+| email            | CharField     | User's email                             |
+| street_address1  | CharField     | User's Address                           |
+| street_address2  | CharField     | User's Address                           |
+| town_or_city     | CharField     | User's County                            |
+| postcode         | CharField     | User's Postcode                          |
+| county           | CharField     | User's County                            |
+| country          | CountryField  | User's Country                           |
+| date             | DateTimeField | Custom Order's date                      |
+| color            | CharField     | Jewel's color                            |
+| material         | CharField     | Materials used                           |
+| jewel_type       | CharField     | Jewel's Type                             |
+| notes            | TextField     | Adittional notes about the custom order  |
+
+
