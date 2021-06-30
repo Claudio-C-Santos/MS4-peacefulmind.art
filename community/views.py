@@ -17,7 +17,7 @@ def community(request):
     return render(request, template, context)
 
 
-def newCard(request):  
+def newCard(request):
     if not request.user.is_authenticated:
         messages.error(request, 'Sorry but you are not authorized to do this. Please create an account.')
 
@@ -61,11 +61,10 @@ def delete_confirmation(request, card_id):
 def delete_card(request, card_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry but you are not authorized to do this. Contact the store manager.')
-        
+
     card = get_object_or_404(communityCard, pk=card_id)
 
     card.delete()
     messages.success(request, f"{card.name}'s business card has been successfully deleted!")
 
     return redirect(reverse('community'))
-

@@ -5,7 +5,7 @@ from .models import communityCard
 
 class OrderAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'card_number', 'description',
+    list_display = ('name', 'description',
                     'date')
 
     """ Will show the order with most recent date first """ 

@@ -37,7 +37,7 @@
                     {% if request.user.is_superuser %}  
                         <hr>
                         <div class="col text-center mt-1 mb-1">
-                            <a class="deleteCard" href="{% url 'delete_confirmation' card.card_number %}">
+                            <a class="deleteCard" href="{% url 'delete_confirmation' card.id %}">
                                 <span class="spanCommunity">Delete</span>
                             </a>
                         </div>
