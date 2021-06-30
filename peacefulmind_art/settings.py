@@ -14,6 +14,8 @@ from pathlib import Path
 
 import os
 
+import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -33,7 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # These are apps that display in /admin 
+    # These are apps that display in /admin
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,10 +55,6 @@ INSTALLED_APPS = [
     'custom_orders',
 
     'crispy_forms'
-
-    # To try implement social media login
-    #'allauth.socialaccount.providers.facebook',
-    #'allauth.socialaccount.providers.google',
 ]
 
 """ Use when implementing socia media login
@@ -86,7 +84,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'peacefulmind_art.urls' 
+ROOT_URLCONF = 'peacefulmind_art.urls'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -144,11 +142,18 @@ WSGI_APPLICATION = 'peacefulmind_art.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+"""
+
+DATABASES = {
+    'default': dj_database_url.parse(
+        'postgres://cchknuvtgqrgim:ee3229b742ff8deba329597d4ed642e2033c41a036f342316e7981bdb57d3b7e@ec2-54-228-9-90.eu-west-1.compute.amazonaws.com:5432/d1kebku432j2qk')
 }
 
 

@@ -21,7 +21,9 @@ class customOrder(models.Model):
 
     material = models.CharField(max_length=254, null=True, blank=True)
     color = models.CharField(max_length=254, null=True, blank=True)
-    jewel_type = models.CharField(max_length=10, choices=JEWEL_OPTIONS, default='Other')
+    jewel_type = models.CharField(max_length=10,
+                                  choices=JEWEL_OPTIONS,
+                                  default='Other')
     notes = models.TextField()
 
     def __str__(self):
@@ -29,6 +31,3 @@ class customOrder(models.Model):
 
     class Meta:
         ordering = ['-date']
-
-
-
