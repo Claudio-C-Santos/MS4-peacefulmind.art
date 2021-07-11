@@ -529,6 +529,17 @@ footer {
     .detailsDiv {
         margin-left: 50px;
     }
+
+    .editProduct,
+    .deleteProduct {
+        width: 250px;
+    }
+    
+    .deleteProduct {
+        margin-top: 10px;
+    }
+    
+    
 }
 
 @media screen and (min-width: 426px) and (max-width: 768px) {
@@ -557,13 +568,6 @@ footer {
     padding-right: 12px;
     }
 
-    #addToBag,
-    .keepShopping,
-    .editProduct,
-    .deleteProduct {
-        width: 175px;
-    }
-
     .prodDetailsBtn {
         margin-bottom: 25px;
         text-align: center;
@@ -576,6 +580,12 @@ footer {
 
     .confirmBtn {
         margin-bottom: 25px;
+    }
+
+    #addToBag,
+    .keepShopping,
+    .deleteProduct {
+        margin-top: 25px;
     }
 }
 
