@@ -142,7 +142,7 @@ WSGI_APPLICATION = 'peacefulmind_art.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -154,8 +154,10 @@ DATABASES = {
 
 DATABASES = {
     'default': dj_database_url.parse(
-        'postgres://xjlmphuaxmigtr:d437149ecc75d2d0b8825b744bfa7cef76fe3c9f80b5bb9c1ca299584fd1e252@ec2-3-248-103-75.eu-west-1.compute.amazonaws.com:5432/d5g6gunqn6pelk')
+        'postgres://pqdgripxbomhbv:d15d47719b8b42d1cdc06ef816c1571ac64a2c582c6f79521b371d892551cef5@ec2-54-155-87-214.eu-west-1.compute.amazonaws.com:5432/dei17rep5n21e2')
 }
+
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
