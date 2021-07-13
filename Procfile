@@ -1,0 +1,1 @@
+web: gunicorn peacefulmind-art.wsgi:application

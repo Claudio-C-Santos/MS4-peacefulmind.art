@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-@_3hi+3qe&s#n8dye1!3*5tw=q3(ee$g$w30r*riuzv35y=+ze
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['peacefulmind-art.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -142,22 +142,18 @@ WSGI_APPLICATION = 'peacefulmind_art.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
-"""
-
-DATABASES = {
-    'default': dj_database_url.parse(
-        'postgres://pqdgripxbomhbv:d15d47719b8b42d1cdc06ef816c1571ac64a2c582c6f79521b371d892551cef5@ec2-54-155-87-214.eu-west-1.compute.amazonaws.com:5432/dei17rep5n21e2')
-}
-
-"""
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
