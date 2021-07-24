@@ -57,7 +57,7 @@ INSTALLED_APPS = [
 
     'crispy_forms',
     'storages'
-]export DATABASE_URL = 
+ 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
