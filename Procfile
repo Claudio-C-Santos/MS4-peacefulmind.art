@@ -1,1 +1,1 @@
-web: gunicorn peacefulmind-art.wsgi:application
+web: gunicorn MS4-peacefulmind.art.wsgi:application
