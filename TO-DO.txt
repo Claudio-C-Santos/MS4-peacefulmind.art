@@ -1,3 +1,2 @@
-[] Stripe Webhooks
-
-Run heroku logs --tail and see the errors. When running the app from Heroku there's an application error
+[] Email
+[] Index image
