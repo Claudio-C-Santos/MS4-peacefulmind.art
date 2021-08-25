@@ -26,7 +26,6 @@ The footer allows the client to learn more about the store owner by reading a sm
 ### User Stories
 
 - As an anonymous user, I want to be able to browse through the whole jewelry stock or browse over just one specific category.
-- As an anonymous user, I want to be able to search through the whole jewelry stock.
 - As an anonymous user, I want to be able to browse through the community in order to check what other business are being marketed.
 - As an anonymous user, I want to be able to create my own account and become a registered client.
 - As an anonymous user and a registered client, I want to know more about the owner of this store by reading about him and checking social media.
@@ -34,7 +33,6 @@ The footer allows the client to learn more about the store owner by reading a sm
 a quote before having to commit to registering.
 - As a registered client, I want to easily add a desired product to my shopping bag.
 - As a registered client, I want to be able to delete a product from the shopping bag.
-- As a registered client, I want to be able to pay for my purchases in a easy way.
 - As a registered client, I want to be able to save my personal details to use them on my next purchase. Besides this I want to be able to update these details.
 - As a registered client, I want to be able to check my previous orders.
 - As a registered client, I want to be able to submit a community card in order to share my own or someone else's business.
@@ -47,7 +45,7 @@ The goal of this project is to give a chance of this small business to reach out
 norm, causing that everyone has the same clothes everywhere, promoting small and medium businesses should be a priority. Enterpreneurs that use their creativity to make the world an exciting
 and diverse place should be praise and supported. 
 
-### Strategy
+### Scope
 
 This platform was built with the goal of promoting this small and individual business.
 
@@ -185,3 +183,112 @@ The reason why it wasn't deleted was because it was creating some conflicts in t
 | notes            | TextField     | Adittional notes about the custom order  |
 
 
+### Schema
+
+The database is divided into 3 main components:
+
+- Products
+- Community Cards
+- Custom Orders
+
+The Products components include 4 databases: User Profile, Products, Category and Order. These 4 databases are the backbone of this whole platform since it provides all the data necessary to display the jewels being sold and then assists with the checkout process are other related processes.
+In order to purchase anything the user needs to have a registered profile which is stored in User Profile Model. The Products and Category models are related to each other since every product is required to have a category. 
+Community Cards and Custom Orders are separate models which are complementary to the platform. The Community Cards Model is where the business details are stored from the users that want to advertise it while the Custom Orders Model is where the user can submit a request for a custom made jewel for the owner then to see.
+
+Bellow is the graphical representation of my database schema:<br>
+
+<img src="static/schema.jpg" alt="Database Schema"><br>
+
+## Existing Features
+
+<ins>Feature 1<ins><br>
+- As an anonymous user, I want to be able to browse through the whole jewelry stock or browse over just one specific category.
+
+<img src="static/screenshots/feature1.jpg" alt="Navigation Bar"><br>
+
+<ins>Feature 2<ins><br>
+- As an anonymous user, I want to be able to browse through the community in order to check what other business are being marketed.
+
+<img src="static/screenshots/feature2.jpg" alt="Community Cards"><br>
+
+<ins>Feature 3<ins><br>
+- As an anonymous user, I want to be able to create my own account and become a registered client.
+
+<img src="static/screenshots/feature3.jpg" alt="Registration"><br>
+
+<ins>Feature 4<ins><br>
+- As an anonymous user and a registered client, I want to know more about the owner of this store by reading about him and checking social media.
+
+<img src="static/screenshots/feature4.jpg" alt="About the owner links"><br>
+
+<ins>Feature 5<ins><br>
+- As an anonymous user and a registered client, I want to be able to submit a custom jewel request. As an anonymous user I want to be able to make this request and possibily receive
+a quote before having to commit to registering.
+
+<img src="static/screenshots/feature5.jpg" alt="Custom Order link"><br>
+<img src="static/screenshots/feature5a.jpg" alt="Custom Order Form"><br>
+
+<ins>Feature 6<ins><br>
+- As a registered client, I want to easily add a desired product to my shopping bag.
+
+<img src="static/screenshots/feature6.jpg" alt="Add to bag button"><br>
+
+<ins>Feature 7<ins><br>
+- As a registered client, I want to be able to delete a product from the shopping bag.
+
+<img src="static/screenshots/feature7.jpg" alt="Delete from bag button"><br>
+
+<ins>Feature 8<ins><br>
+- As a registered client, I want to be able to save my personal details to use them on my next purchase. Besides this I want to be able to update these details.
+
+<img src="static/screenshots/feature8.jpg" alt="Profile Data"><br>
+
+<ins>Feature 9<ins><br>
+- As a registered client, I want to be able to check my previous orders.
+
+<img src="static/screenshots/feature9.jpg" alt="Order History"><br>
+
+<ins>Feature 10<ins><br>
+- As a registered client, I want to be able to submit a community card in order to share my own or someone else's business.
+
+<img src="static/screenshots/feature10.jpg" alt="Create a Card Link"><br>
+<img src="static/screenshots/feature10a.jpg" alt="Create a Card Form"><br>
+
+<ins>Feature 11<ins><br>
+- As the store owner, I want to be able to manage my products by adding new products, editing or deleting existing ones.
+
+<img src="static/screenshots/feature11.jpg" alt="Manage Products Link"><br>
+<img src="static/screenshots/feature11a.jpg" alt="Create New Product Form"><br>
+
+<ins>Feature 12<ins><br>
+- As the store owner, I want to be able to manage the community cards by deleting the ones I find not relevant.
+
+<img src="static/screenshots/feature12.jpg" alt="Delete Community Card Button"><br>
+
+### Features Left to Implement
+
+The payment flow is still in test so no actual payment is submitted, for this platform to go live this must go live too.
+
+### Known Bugs
+
+Below is a list of bugs/things that are not working correctly that were detected. These weren't corrected due to lack of time from the developer's side so they are flagged here.
+
+The Sort dropdown in the product pages is not working. The option are correctly displayed in the dropdown but does nothing when one of them is selected.
+After doing the checkout it displays the order in duplicate. 
+
+# Technologies Used
+
+- Programming Languages
+    - HTML
+    - CSS
+    - JavaScript
+    - Python
+- [Django](https://www.djangoproject.com/)
+- [Google Fonts](https://fonts.google.com/)
+    - Amatic font style was used
+- [Font Awesome](https://fontawesome.com/)
+- [Stripe](https://stripe.com/en-nl)
+
+# Testing
+
+All the tests done to this website can be found in testing.md.
