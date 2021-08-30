@@ -37,7 +37,7 @@ class StripeWH_Handler:
     def handle_event(self, event):
         """ Handle a generice/unknown/unexpected webhook event """
 
-        return HttpResponse(content=f'Unhandled webhook received:
+        return HttpResponse(content=f'Unhandled webhook received: \
                             {event["type"]}',
                             status=200)
 
@@ -67,10 +67,8 @@ class StripeWH_Handler:
                 profile.default_country = shipping_details.address.country
                 profile.default_postcode = shipping_details.address.postal_code
                 profile.default_town_or_city = shipping_details.address.city
-                profile.default_street_address1 =
-                shipping_details.address.line1
-                profile.default_street_address2 =
-                shipping_details.address.line2
+                profile.default_street_address1 = shipping_details.address.line1
+                profile.default_street_address2 = shipping_details.address.line2
                 profile.default_county = shipping_details.address.state
                 profile.save()
 
@@ -104,7 +102,7 @@ class StripeWH_Handler:
             self._send_confirmation_email(order)
 
             return HttpResponse(
-                content=f'Webhook received:
+                content=f'Webhook received: \
                 {event["type"]} | SUCCESS: Order has been saved.',
                 status=200)
         else:
@@ -146,6 +144,6 @@ class StripeWH_Handler:
         """ Handle a succeded payment intent with a failed
         payment webhook from Stripe """
 
-        return HttpResponse(content=f'Failed payment webhook received:
+        return HttpResponse(content=f'Failed payment webhook received: \
                             {event["type"]}',
                             status=200)
