@@ -23,3 +23,7 @@ The base.css file was validated via Jigsaw's validation service and it showed no
             alt="Valid CSS!" />
     </a>
 </p>
+
+- [JSHint](https://jshint.com/)
+
+All JavaScript files were validated no errors were found.
