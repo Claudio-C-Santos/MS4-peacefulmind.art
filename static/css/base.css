@@ -307,7 +307,7 @@ body{
     width: 250px;
     height: 75px;
     line-height: 55px;
-    font-size: 1,5rem;
+    font-size: 1.5rem;
     top: 200px;
     right: 65px;
 }
@@ -786,7 +786,7 @@ select option[value=""] {
     font-weight: bold;
 }
 
-@media screen (max-width: 425px) {
+@media screen and (max-width: 425px) {
     .center {
         text-align: center;
     }
