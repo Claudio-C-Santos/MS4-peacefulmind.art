@@ -193,10 +193,10 @@ body{
 
 
 @keyframes glowing {
-  0% { box-shadow: 0 0 -30px #ffffff; }
+  0% { box-shadow: 0 0 30px #ffffff; }
   40% { box-shadow: 0 0 50px #ffffff; }
   60% { box-shadow: 0 0 50px #ffffff; }
-  100% { box-shadow: 0 0 -30px #ffffff; }
+  100% { box-shadow: 0 0 30px #ffffff; }
 }
 
 .button-glow {
