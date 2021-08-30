@@ -24,13 +24,14 @@ def cache_checkout_data(request):
         stripe.PaymentIntent.modify(pid, metadata={
             'bag': json.dumps(request.session.get('bag', {})),
             'save_info': request.POST.get('save_info'),
-            'username': request.user, 
+            'username': request.user,
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry but your payment cannot be processed at the moment. Please try again later.')
+        messages.error(request,
+                       'Sorry payment was not processed. Try again later.')
         return HttpResponse(content=e, status=400)
-        
+
 
 @login_required
 def checkout(request):
@@ -74,21 +75,23 @@ def checkout(request):
 
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "Something went wrong, it looks like we weren't able to find one or more products. "
+                        "Looks like one or more products are missing."
                         "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                                    args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request,
+                           "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)

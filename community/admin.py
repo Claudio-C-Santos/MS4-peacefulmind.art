@@ -8,7 +8,7 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ('name', 'description',
                     'date')
 
-    """ Will show the order with most recent date first """ 
+    """ Will show the order with most recent date first """
 
     ordering = ('-date',)
 

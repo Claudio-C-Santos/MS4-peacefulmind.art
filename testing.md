@@ -27,3 +27,7 @@ The base.css file was validated via Jigsaw's validation service and it showed no
 - [JSHint](https://jshint.com/)
 
 All JavaScript files were validated no errors were found.
+
+- [PEP8 Online](http://pep8online.com/)
+
+All Python files were validate and not significant errors were detected.

@@ -41,10 +41,13 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "Please include a search criteria so we can assist you.")
+                messages.error(request,
+                               "Please include a search criteria \
+                                so we can assist you.")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) \
+                | Q(description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -62,7 +65,7 @@ def all_products(request):
 def product_detail(request, product_id):
     """ This view displays the selected product's details"""
 
-    product = get_object_or_404(Product, pk=product_id) 
+    product = get_object_or_404(Product, pk=product_id)
 
     context = {
         'product': product,
@@ -75,7 +78,8 @@ def product_detail(request, product_id):
 def add_product(request):
     """ Allows the superuser to manage products by adding a product """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry but you are not authorized to do this. Contact the store manager.')
+        messages.error(request, 'Sorry but you are not authorized to do this. \
+                       Contact the store manager.')
 
     form = ProductForm()
 
@@ -83,10 +87,12 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
-            messages.success(request, 'Product has successfully added to your store!')
+            messages.success(request, 'Product has successfully \
+                             added to your store!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Something went wrong! Please ensure all details are correctly inserted.')
+            messages.error(request, 'Something went wrong! \
+                           Please ensure all details are correctly inserted.')
     else:
         form = ProductForm()
 
@@ -103,17 +109,20 @@ def add_product(request):
 def edit_product(request, product_id):
     """ Allows the superuser to manage products by editing a product """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry but you are not authorized to do this. Contact the store manager.')
+        messages.error(request, 'Sorry but you are not authorized to do this. \
+                       Contact the store manager.')
 
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, '{product.name} has been successfully updated!!')
+            messages.success(request, '{product.name} \
+                             has been successfully updated!!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Something went wrong! Please ensure all details are correctly inserted.')
+            messages.error(request, 'Something went wrong! \
+                           Please ensure all details are correctly inserted.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing "{product.name}"')
@@ -132,10 +141,11 @@ def edit_product(request, product_id):
 def confirm_delete(request, product_id):
     """ Checks if the user really want to delete the product """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry but you are not authorized to do this. Contact the store manager.')
+        messages.error(request, 'Sorry but you are not authorized to do this. \
+                       Contact the store manager.')
 
     product = get_object_or_404(Product, pk=product_id)
-      
+
     context = {
         'product': product,
     }
@@ -146,12 +156,12 @@ def confirm_delete(request, product_id):
 @login_required
 def delete_product(request, product_id):
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry but you are not authorized to do this. Contact the store manager.')
-        
+        messages.error(request, 'Sorry but you are not authorized to do this. \
+                       Contact the store manager.')
+
     product = get_object_or_404(Product, pk=product_id)
 
     product.delete()
     messages.success(request, f'{product.name} has been successfully delete!')
 
     return redirect(reverse('products'))
-

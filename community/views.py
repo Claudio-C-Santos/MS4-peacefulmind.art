@@ -19,17 +19,22 @@ def community(request):
 
 def newCard(request):
     if not request.user.is_authenticated:
-        messages.error(request, 'Sorry but you are not authorized to do this. Please create an account.')
+        messages.error(request,
+                       'Sorry you need to create an account.')
 
     if request.method == 'POST':
         card = newCardForm(request.POST)
 
         if card.is_valid():
             card.save()
-            messages.success(request, 'The card for this business has successfully been created.')
+            messages.success(request,
+                             'The business card \
+                             has successfully been created.')
             return redirect(reverse('community'))
         else:
-            messages.error(request, 'Something went wrong! Please ensure all details are correctly inserted.')
+            messages.error(request,
+                           'Something went wrong! \
+                            Please ensure details are correct.')
     else:
         card = newCardForm()
 
@@ -45,7 +50,8 @@ def newCard(request):
 def delete_confirmation(request, card_id):
     """ Checks if the user really want to delete the product """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry but you are not authorized to do this. Contact the store manager.')
+        messages.error(request, 'Sorry but you are not authorized \
+                       to do this. Contact the store manager.')
 
     card = get_object_or_404(communityCard, pk=card_id)
 
@@ -60,11 +66,13 @@ def delete_confirmation(request, card_id):
 
 def delete_card(request, card_id):
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry but you are not authorized to do this. Contact the store manager.')
+        messages.error(request, 'Sorry but you are \
+                       not authorized to do this. Contact the store manager.')
 
     card = get_object_or_404(communityCard, pk=card_id)
 
     card.delete()
-    messages.success(request, f"{card.name}'s business card has been successfully deleted!")
+    messages.success(request, f"{card.name}'s business \
+                     card has been successfully deleted!")
 
     return redirect(reverse('community'))

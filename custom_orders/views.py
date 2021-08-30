@@ -11,10 +11,13 @@ def custom_orders(request):
 
         if customOrder.is_valid():
             customOrder.save()
-            messages.success(request, 'Your order has been successfully received. You will be contacted as soon as possible. Thank you!')
+            messages.success(request, 'Your order has been successfully received. \
+                             You will be contacted as soon as possible. \
+                             Thank you!')
             return redirect(reverse('home'))
         else:
-            messages.error(request, 'Something went wrong with your order. Please ensure you filled the form correctly.')
+            messages.error(request, 'Something went wrong with your order. \
+                           Please ensure you filled the form correctly.')
     else:
         customOrder = newCustomOrderForm()
 
@@ -43,7 +46,7 @@ def custom_order_details(request, custom_order_id):
     custom_order = get_object_or_404(customOrder, pk=custom_order_id)
 
     template = 'custom_order_details.html'
-    
+
     context = {
         'custom_order': custom_order,
     }
@@ -55,6 +58,5 @@ def custom_order_completed(request, custom_order_id):
     custom_order = get_object_or_404(customOrder, pk=custom_order_id)
 
     custom_order.delete()
-    
-    return redirect(reverse('pending_orders'))
 
+    return redirect(reverse('pending_orders'))
