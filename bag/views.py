@@ -35,7 +35,7 @@ def remove_product(request, item_id):
 
     bag.pop(item_id)
 
-    messages.success(request, f'{product.name} has successfully been removed
+    messages.success(request, f'{product.name} has successfully been removed \
                      from your bag.')
 
     request.session['bag'] = bag
