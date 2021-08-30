@@ -20,7 +20,7 @@ def add_to_bag(request, item_id):
                          added {product.name} to your bag.')
     else:
         bag[item_id] = 1
-        messages.success(request, f'{product.name} has
+        messages.success(request, f'{product.name} has \
                          been added to your bag.')
 
     request.session['bag'] = bag
