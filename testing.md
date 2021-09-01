@@ -55,29 +55,34 @@ The app has been tested by friends and family who opened the app on different sc
 3. Login Page:
     - Doesn't allow a user to login without registered credentials.
     - Provides a link directly to the registration page.
+    - In case the user forgot his password, there's a link to a related page.
 
-4. Products Page:
-    - The products will be displayed according to the category selection on the navigation bar.
-    - When a product is selected, if the user has a normal account the only options will be to go back to the product list of add the selected product to the bag however if the user is a superuser two extra buttons are displayed, Edit and Delete product.
+4. Forgot Password Page:
+    - The form validates if email address has @ symbol.
 
-5. Profile Page:
+5. Products Page:
+    - The products will be displayed according to the category selection on the navigation bar. The option ares All Products, Pendants, Rings, Sale and Special Edition.
+    - When a product is selected, if the user has a normal account the only options will be to go back to the product list of add the selected product to the bag.
+    - If the user is a superuser two extra buttons are displayed, Edit and Delete product.
+
+6. Profile Page:
     - The option to access the profile page is only displayed when the user is logged in.
     - The profile page allows the user to change its own information and see previous orders made with its username.
     - The logged in user can see each order details.
 
-6. Community Page:
+7. Community Page:
     - If the user is not logged in it can only see the available cards.
     - If the user has a "normal" account and is logged in then the option to add a community card is displayed.
     - If the logged in user is a superuser then a button to delete cards is displayed.
 
-7. Product Management Page:
+8. Product Management Page:
     - This form is only available for superuser.
     - The Category field is a dropdown with a restricted list.
     - The Price field only allows to input numbers.
     - The Cancel button works fine by bringing the user back to the main page.
     - The Add Product button creates the new product which is then displayed in the related product page.
 
-8. Custom Order Page:
+9. Custom Order Page:
     - The form has mandatory fields marked with a * and won't allow the form to be submitted without these inputs.
     - The Country field has a dropdown field displaying all the available countries. 
     - The Jewel type field is a dropdown with a limited list of options.
@@ -85,7 +90,7 @@ The app has been tested by friends and family who opened the app on different sc
     - The Submit Order button creates a new custom order which is then displayed only for the superuser.
     - The superuser has an option in My Account that is only displayed when superuser is logged in.
 
-9. Shopping Bag Page
+10. Shopping Bag Page
     - Any user can fill its shopping bag.
     - If a user is not logged in and click on Checkout it's redirected to the login page.
     - The Delete button removes the related product from the bag.
@@ -93,5 +98,5 @@ The app has been tested by friends and family who opened the app on different sc
     - The products display correctly with the respective Delete button.
     - When Payment details are correctly filled in the order is completed and a overview is displayed. At the same time an email is sent to the user's email address.
 
-10. When a user wants to log out, under My Account there's a button Logout which redirects the user to a page asking the user to confirm it wants to log out.
+11. When a user wants to log out, under My Account there's a button Logout which redirects the user to a page asking the user to confirm it wants to log out.
 

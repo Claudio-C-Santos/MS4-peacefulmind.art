@@ -292,3 +292,60 @@ After doing the checkout it displays the order in duplicate.
 # Testing
 
 All the tests done to this website can be found in testing.md.
+
+## Heroku
+
+1.  The first thing was to create a requirements.txt and a Procfile as below:
+
+```
+pip3 freeze --local > requirements.txt
+echo web: python app.py > Procfile
+```
+
+2.  Once these files were sucessfuly created I navigated to [Heroku](https://www.heroku.com/) and logged into my account.
+    On the top right side of the screen click on "New" and created a new app.
+  
+<img src="static/screenshots/heroku/second_step.JPG" alt="Heroku Deployment - Creating a new app">  
+
+3.  Then I had to chose a name for my app, I decided on "peacefulmind-art".
+  
+<img src="static/screenshots/heroku/third_step.JPG" alt="Heroku Deployment - Naming the app"> 
+
+4.  After creating the app in Heroku installed and imported dj_database_url into the project's settings file and then add the POSTGRES database connection as the default database when in production mode alongside the sqlite database when in development. At this point psycopg2 was also installed.
+
+After installing these two I ran pip3 freeze in order to update requirements.txt
+
+<img src="static/screenshots/heroku/forth_step.jpg" alt="Database Setup"> 
+
+5.  A new superuser had to be created so ran the command:
+
+```
+python3 manage.py createsuperuser
+```
+
+For review purposes here's the credential of this superuser
+
+```
+username: superuser
+password: superuser
+```
+
+6.  With the superuser created installed gunicorn before creating a Procfile.
+
+```
+pip3 install gunicorn
+```
+
+7.  Temporarily disabled COLLECTSTATIC in the Heroku CLI by setting it to -1.
+
+8.  Set up the ALLOWED_HOTS in setting.py in order to allow Heroku's hostname.
+
+9. Set up config variable SECRET_KEY.
+
+10. Set up automatic deployments in Heroku by connecting to the Lionize github repo.
+
+<img src="static/screenshots/heroku/tenth_step.jpg" alt="Setup automatic deployments"> 
+
+11. Enable automatic deploys by selecting the master branch.
+
+<img src="static/screenshots/heroku/eleventh_step.jpg" alt="Enable automatic deployments"> 
