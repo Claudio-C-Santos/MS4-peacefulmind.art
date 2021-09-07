@@ -1,6 +1,6 @@
 # Peacefulmind.art
 
-This e-commerce platform was was designed and built in order to scale an already existing business. This business is the selling of handmade craft jewelry 
+This e-commerce platform that was designed and built to scale an already existing business. This business is the selling of handmade craft jewelry 
 which has been running on Instagram using DMs to complete the sell. The intention is to automate most of the processes and allow the store owner to reach a bigger number of clients
 and allow them to make their payments securely and hassle free via Stripe's payment system. With this platform up and running, the store owner only needs to monitor the orders and
 post them itself. The platform requests the client to create an account in order to save their details and previous orders so make future purchases more efficient and easy for the client.
@@ -10,7 +10,7 @@ for a custom made craft jewel.
 Besides the business itself, on this platform there's a sub-platform called "Community" that has the goal of helping other small business to exposes themselves and hopefully reach
 out to a bigger number of clients. This idea came from the very essence of "sharing is caring" that rules the store owner's life.
 
-A live demo of website can be found [here](###########################).
+A live demo of website can be found [here](https://peacefulmind-art.herokuapp.com/).
 
 ## UX
 
@@ -231,7 +231,7 @@ a quote before having to commit to registering.
 <ins>Feature 6<ins><br>
 - As a registered client, I want to easily add a desired product to my shopping bag.
 
-<img src="static/screenshots/feature6.jpg" alt="Add to bag button"><br>
+<img src="static/screenshots/feature 6.jpg" alt="Add to bag button"><br>
 
 <ins>Feature 7<ins><br>
 - As a registered client, I want to be able to delete a product from the shopping bag.
@@ -288,6 +288,9 @@ After doing the checkout it displays the order in duplicate.
     - Amatic font style was used
 - [Font Awesome](https://fontawesome.com/)
 - [Stripe](https://stripe.com/en-nl)
+- [sqlite3](https://www.sqlite.org/index.html)
+- [Postgres](https://www.postgresql.org/)
+- [Heroku](https://www.heroku.com)
 
 # Testing
 
@@ -349,3 +352,122 @@ pip3 install gunicorn
 11. Enable automatic deploys by selecting the master branch.
 
 <img src="static/screenshots/heroku/eleventh_step.jpg" alt="Enable automatic deployments"> 
+
+## AWS
+
+1.  Created my own AWS account.
+
+2.  In the AWS Management Console searched for S3.
+
+3.  In the S3 Management Console click on "Create bucket" to create a new bucket. Inserted the bucket's name "peacefulmind-art" and selected the closeste region for me. Gave public access, as below:
+
+<img src="static/screenshots/aws/create_bucket_aws.jpg" alt="Create Bucket Screenshot"> 
+
+4.  Once the new bucket was created, navigated to the properties tab of the bucket and scrolled down to "Static website hosting", click "Edit", and then selected "Enable" under the "Static website hosting" option. My default values for "Index document" and "Error document - optional" were index.html and error.html, as below:
+
+<img src="static/screenshots/aws/properties.jpg" alt="Properties Navbar"> 
+<img src="static/screenshots/aws/static_hosting.jpg" alt="Static Website Hosting"> 
+<img src="static/screenshots/aws/static_website_hosting.jpg" alt="Static Website Hosting"> 
+
+5.  On the bucket's permissions tab, add a CORS configuration, as below:
+
+<img src="static/screenshots/aws/permissions.jpg" alt="Permissions Navbar"> 
+<img src="static/screenshots/aws/CORS.jpg" alt="CORS"> 
+
+6.  On the bucket's policy tab, clicked on "policy generator" and created a new policy which will then be added to the bucket.
+
+7.  After saving the bucket policy, scrolled to the "Access control list (ACL)" tab and checked the list of objects box under the "Everyone (public access)" header.
+
+### AWS Identity and Access Management Configuration
+
+1.  In the IAM dashboard under "Security, Identity, & Compliance" navigated to the "User Groups" tab and created a new group.
+
+
+<img src="static/screenshots/aws/users_groups.jpg" alt="Create a new user group"> 
+
+2.  Under the policies tab, clicked on the JSON tab and then clicked on "Import managed policy".
+
+3.  Select the S3FullAccess policy and click import.
+
+<img src="static/screenshots/aws/policies.jpg" alt="Import AmazonS3FullAccess policies"> 
+
+4.  Edited the imported JSON code in order to allow full access to the app's bucket and its' associated files, using its bucket's arn.
+
+5.  Filled in the name and policy's description before creating the policy.
+
+6.  Back in the "User groups" page clicked on the "manage-peacefulmind-art" group. Navigated to "permissions" and clicked the dropdown menu "Add permission" and selected "Attach Policies". Then click to check the policy that was just created and then click to "Add permissions".
+
+<img src="static/screenshots/aws/permissions_policies.jpg" alt="Permissions Policies"> 
+
+7.  Created a user to add to the group with programmatic access, for this project I named it "ms4-peacefulmind-art-staticfiles-user".
+
+<img src="static/screenshots/aws/add_user.jpg" alt="Add User"> 
+
+8.  Downloaded the CSV file with the new user's access key and secret access key in order to add them to Django to authenticate this user.
+
+9.  Installed boto3 & django-storages, froze them into requirements.txt and then added 'storages' to the installed apps list in settings.py
+
+10. Added the following AWS config variables to the settings.py file for use only if the USE_AWS var is found in os.environ:
+
+```
+AWS_STORAGE_BUCKET_NAME = 'peacefulmind-art'
+AWS_S3_REGION_NAME = 'eu-central-1'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_KEY')
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+# Static and media files
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATICFILES_LOCATION = 'static'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = 'media'
+
+# Override static and media URLs in productions
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
+
+11. Added the Access Keys as well as the USE_AWS=TRue to the Heroku config vars.
+
+12. Committed these changes and pushed to github which then deployed it in Heroku due to because of automatic deployments, and the build collected all the Static files and placed them in the S3 bucket and Heroku served them successfully.
+
+13. Created a new folder in the S3 bucket called Media and set permissions to grant public-read access as below:
+
+<img src="static/screenshots/aws/acl.jpg" alt="Access Control List"> 
+
+14. Last step was to just upload all the in-app images into that folder.
+
+## Stripe
+
+1.  Created a Stripe account and set it up in order to test payments.
+
+2.  Added the STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY as config variables in Heroku.
+
+3.  Created a new Production Webhook Endpoint in the Stripe Dashboard by clicking on the "Developers" and then "Webhooks" and finally "Add endpoint". Then added the application's heroku url + checkout/wh/ to "receive all events".
+
+4.  Finally added the webhook's signing secret to the Heroku config variables.
+
+## Emails
+
+1.  In the application's associated Gmail account set up 2-step verification.
+
+2.  Generated a new app password and added it to the application's config variables in Heroku alongside with a EMAIL_HOST_USER variable that stores the associated email.
+
+3.  Then in settings.py use the following settings to connect the application to send emails via Gmail:
+
+```
+if "DEVELOPMENT" in os.environ:
+    DEFAULT_FROM_EMAIL = 'peacefulmind-art@gmail.com'
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+```
+
+
+
