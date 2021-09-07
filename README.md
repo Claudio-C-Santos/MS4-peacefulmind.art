@@ -2,9 +2,9 @@
 
 This e-commerce platform that was designed and built to scale an already existing business. This business is the selling of handmade craft jewelry 
 which has been running on Instagram using DMs to complete the sell. The intention is to automate most of the processes and allow the store owner to reach a bigger number of clients
-and allow them to make their payments securely and hassle free via Stripe's payment system. With this platform up and running, the store owner only needs to monitor the orders and
-post them itself. The platform requests the client to create an account in order to save their details and previous orders so make future purchases more efficient and easy for the client.
-Besides the already crafted jewelry, the client has the option to make a custom order also through the platform. The client just needs to fill a form and include their requirements
+and allow them to make their payments securely and hassel free via Stripe's payment system. With this platform up and running, the store owner only needs to monitor the orders and
+courier them itself. The platform requests the client to create an account in order to save their details and previous orders in order to make future purchases more efficient and easy for the client.
+Besides the already crafted jewelry, the client has the option to make a custom order through the platform. The client just needs to fill a form and include their requirements
 for a custom made craft jewel.
 
 Besides the business itself, on this platform there's a sub-platform called "Community" that has the goal of helping other small business to exposes themselves and hopefully reach
@@ -14,10 +14,9 @@ A live demo of website can be found [here](https://peacefulmind-art.herokuapp.co
 
 ## UX
 
-THe main users of this platform is everyone who desires to purchase a piece of jewelry which won't be found anywhere else, there's no more exlusive than this.
+The main users of this platform are everyone with a desire to purchase a piece of jewelry which won't be found anywhere else, there's no more exlusive than this.
 
-The navigation is very user friendly, starting with and index page that has all the links displayed and easy to see. On the top bar, on the right, there are the account, community and shopping bag icons
-abnd just bellow are the links that divide the entire stock into categories in order to make ir easier for the client to search for exactly what it wants.
+The navigation is very user friendly, starting with and index page that has all the links displayed and easy to see. On the top bar, on the right, there are the account, community and shopping bag icons and just bellow are the links that divide the entire stock into categories. This makes it easier for the client to search for exactly what it wants.
 
 The footer allows the client to learn more about the store owner by reading a small biography and checking his intagram page. The custom order link is also in this area.
 
@@ -41,8 +40,7 @@ a quote before having to commit to registering.
 
 ### Strategy
 
-The goal of this project is to give a chance of this small business to reach out to a bigger number of possible clients. In a world where chain business where everything is standard is the 
-norm, causing that everyone has the same clothes everywhere, promoting small and medium businesses should be a priority. Enterpreneurs that use their creativity to make the world an exciting
+The goal of this project is to give a chance of this small business to reach out to a bigger number of possible clients. In a world filled woth chain business where everything is the standard causing that everyone has the same clothes, promoting small and medium businesses should be a priority. Enterpreneurs that use their creativity to make the world an exciting
 and diverse place should be praise and supported. 
 
 ### Scope
@@ -191,9 +189,7 @@ The database is divided into 3 main components:
 - Community Cards
 - Custom Orders
 
-The Products components include 4 databases: User Profile, Products, Category and Order. These 4 databases are the backbone of this whole platform since it provides all the data necessary to display the jewels being sold and then assists with the checkout process are other related processes.
-In order to purchase anything the user needs to have a registered profile which is stored in User Profile Model. The Products and Category models are related to each other since every product is required to have a category. 
-Community Cards and Custom Orders are separate models which are complementary to the platform. The Community Cards Model is where the business details are stored from the users that want to advertise it while the Custom Orders Model is where the user can submit a request for a custom made jewel for the owner then to see.
+The Products components include 4 databases: User Profile, Products, Category and Order. These 4 databases are the backbone of this whole platform since it provides all the data necessary to display the jewels being sold and then assists with the checkout process and other related processes. In order to purchase anything the user needs to have a registered profile which is stored in User Profile Model. The Products and Category models are related to each other since every product is required to have a category. Community Cards and Custom Orders are separate models which are complementary to the platform. The Community Cards Model is where the business details are stored from the users that want to advertise it while the Custom Orders Model is where the user can submit a request for a custom made jewel for the owner then to see.
 
 Bellow is the graphical representation of my database schema:<br>
 
@@ -268,12 +264,13 @@ a quote before having to commit to registering.
 ### Features Left to Implement
 
 The payment flow is still in test so no actual payment is submitted, for this platform to go live this must go live too.
+Login with social media is also a feature that would help the platform to get more users to register.
 
 ### Known Bugs
 
 Below is a list of bugs/things that are not working correctly that were detected. These weren't corrected due to lack of time from the developer's side so they are flagged here.
 
-The Sort dropdown in the product pages is not working. The option are correctly displayed in the dropdown but does nothing when one of them is selected.
+The Sort dropdown in the product pages is not working. The option are correctly displayed in the dropdown but does nothing when one of them is selected.\
 After doing the checkout it displays the order in duplicate. 
 
 # Technologies Used
