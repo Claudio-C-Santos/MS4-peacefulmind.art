@@ -271,7 +271,7 @@ Login with social media is also a feature that would help the platform to get mo
 Below is a list of bugs/things that are not working correctly that were detected. These weren't corrected due to lack of time from the developer's side so they are flagged here.
 
 The Sort dropdown in the product pages is not working. The option are correctly displayed in the dropdown but does nothing when one of them is selected.\
-After doing the checkout it displays the order in duplicate. 
+The purchases are being recorded in duplicate, this can be seen when checking a registered user's profile.
 
 # Technologies Used
 
@@ -291,7 +291,7 @@ After doing the checkout it displays the order in duplicate.
 
 # Testing
 
-All the tests done to this website can be found in testing.md.
+All the tests done to this website can be found in [testing.md](testing.md).
 
 ## Heroku
 
@@ -302,7 +302,7 @@ pip3 freeze --local > requirements.txt
 echo web: python app.py > Procfile
 ```
 
-2.  Once these files were sucessfuly created I navigated to [Heroku](https://www.heroku.com/) and logged into my account.
+2.  Once these files were sucessfuly created I navigated to Heroku and logged into my account.
     On the top right side of the screen click on "New" and created a new app.
   
 <img src="static/screenshots/heroku/second_step.JPG" alt="Heroku Deployment - Creating a new app">  
@@ -311,13 +311,11 @@ echo web: python app.py > Procfile
   
 <img src="static/screenshots/heroku/third_step.JPG" alt="Heroku Deployment - Naming the app"> 
 
-4.  After creating the app in Heroku installed and imported dj_database_url into the project's settings file and then add the POSTGRES database connection as the default database when in production mode alongside the sqlite database when in development. At this point psycopg2 was also installed.
-
-After installing these two I ran pip3 freeze in order to update requirements.txt
+4.  After creating the app in Heroku installed and imported dj_database_url into the project's settings file and then add the POSTGRES database connection as the default database when in production mode alongside the sqlite database when in development. At this point psycopg2 was also installed. Once these were installed I ran pip3 freeze in order to update requirements.txt
 
 <img src="static/screenshots/heroku/forth_step.jpg" alt="Database Setup"> 
 
-5.  A new superuser had to be created so ran the command:
+5.  ACreayed a new superuser by running:
 
 ```
 python3 manage.py createsuperuser
